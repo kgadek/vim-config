@@ -40,3 +40,6 @@
 [submodule "_cabal/lushtags"]
 	path = _cabal/lushtags
 	url = git@github.com:bitc/lushtags.git
+[submodule "bundle/vim-slime"]
+	path = bundle/vim-slime
+	url = git@github.com:jpalardy/vim-slime.git

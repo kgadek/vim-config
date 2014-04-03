@@ -34,3 +34,10 @@ let g:haddock_browser_callformat = "%s %s"
 
 " ghcmod-vim
 "autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+" vim-slime
+let g:slime_target = "tmux"
+
+" pointfree
+autocmd BufEnter *.hs set formatprg="xrgs pointfree"
+
