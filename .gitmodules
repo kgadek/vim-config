@@ -43,3 +43,6 @@
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = git@github.com:jpalardy/vim-slime.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
