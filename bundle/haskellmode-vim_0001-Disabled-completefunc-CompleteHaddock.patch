@@ -1,0 +1,25 @@
+From 29dafc972738bcb5f628c409d34f33ac661093ee Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Konrad=20G=C4=85dek?= <kgadek@gmail.com>
+Date: Sat, 12 Apr 2014 00:47:27 +0200
+Subject: [PATCH] Disabled completefunc=CompleteHaddock
+
+---
+ ftplugin/haskell_doc.vim | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ftplugin/haskell_doc.vim b/ftplugin/haskell_doc.vim
+index 6dda183..600926a 100644
+--- a/ftplugin/haskell_doc.vim
++++ b/ftplugin/haskell_doc.vim
+@@ -756,7 +756,7 @@ function! CompleteHaddock(findstart, base)
+     return res
+   endif
+ endfunction
+-setlocal completefunc=CompleteHaddock
++"setlocal completefunc=CompleteHaddock
+ "
+ " Vim's default completeopt is menu,preview
+ " you probably want at least menu, or you won't see alternatives listed
+-- 
+1.8.5.2 (Apple Git-48)
+

@@ -50,3 +50,9 @@ autocmd BufEnter *.hs set formatprg="xrgs pointfree"
 
 " tagbar
 map <Leader>p :TagbarToggle
+
+" neco-ghc
+let g:necoghc_enable_detailed_browse = 1
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
