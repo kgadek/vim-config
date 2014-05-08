@@ -11,7 +11,7 @@ colorscheme solarized
 
 " various
 set nu
-set shiftwidth=4 tabstop=4
+set shiftwidth=2 tabstop=2
 set expandtab
 set smarttab
 set scrolloff=3
@@ -56,3 +56,7 @@ let g:necoghc_enable_detailed_browse = 1
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+" fast-tags
+au BufWritePost *.hs            silent !init-tags %
+au BufWritePost *.hsc           silent !init-tags %
