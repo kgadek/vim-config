@@ -24,6 +24,17 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
+" Commenting blocks of code.
+autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex              let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
+autocmd FileType haskell          let b:comment_leader = '-- '
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
 " vim-airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -33,6 +44,7 @@ let g:airline_powerline_fonts = 1
 
 " haskellmode-vim
 au BufEnter *.hs compiler ghc
+" OS X specific
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
@@ -46,7 +58,8 @@ map <Leader>y :GhcModTypeClear
 let g:slime_target = "tmux"
 
 " pointfree
-autocmd BufEnter *.hs set formatprg="xrgs pointfree"
+" use `gq` to reformat
+autocmd BufEnter *.hs set formatprg="xargs pointfree"
 
 " tagbar
 map <Leader>p :TagbarToggle
