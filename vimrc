@@ -20,9 +20,9 @@ set backspace=2
 
 let mapleader = ","
 
-set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+" set mouse=a
+" map <ScrollWheelUp> <C-Y>
+" map <ScrollWheelDown> <C-E>
 
 " Commenting blocks of code.
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
@@ -59,7 +59,7 @@ let g:slime_target = "tmux"
 
 " pointfree
 " use `gq` to reformat
-autocmd BufEnter *.hs set formatprg="xargs pointfree"
+autocmd BufEnter *.hs set formatprg=xargs\ pointfree
 
 " tagbar
 map <Leader>p :TagbarToggle
@@ -73,3 +73,9 @@ let g:neocomplcache_enable_at_startup = 1
 " fast-tags
 au BufWritePost *.hs            silent !init-tags %
 au BufWritePost *.hsc           silent !init-tags %
+
+" make vimdiff ignore whitespace while normal vim doesn't
+if &diff
+    " diff mode
+    set diffopt+=iwhite
+endif
