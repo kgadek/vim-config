@@ -1,3 +1,7 @@
+" Fugitive
+command Gq :Gwrite <bar> q
+command Gd :Gdiff
+
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -11,7 +15,7 @@ colorscheme solarized
 
 " various
 set nu
-set shiftwidth=2 tabstop=2
+set shiftwidth=4 tabstop=4
 set expandtab
 set smarttab
 set scrolloff=3
@@ -21,6 +25,7 @@ set backspace=2
 let mapleader = ","
 
 " set mouse=a
+set mouse=
 " map <ScrollWheelUp> <C-Y>
 " map <ScrollWheelDown> <C-E>
 
@@ -78,4 +83,12 @@ au BufWritePost *.hsc           silent !init-tags %
 if &diff
     " diff mode
     set diffopt+=iwhite
+endif
+
+" tabularize
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
