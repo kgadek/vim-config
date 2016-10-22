@@ -11,7 +11,10 @@ filetype plugin indent on
 " Color scheme
 set background=dark
 let g:solarized_termtrans = 1
-colorscheme solarized
+"colorscheme solarized
+"colorscheme gotham
+colorscheme alduin
+"colorscheme dracula
 
 " various
 set nu
@@ -21,11 +24,48 @@ set smarttab
 set scrolloff=3
 set incsearch
 set backspace=2
+set breakindent
 
 let mapleader = ","
 
-" set mouse=a
-set mouse=
+" vim-go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+" LaTeX-Box
+" let g:LatexBox_latexmk_preview_continuously=1
+" let g:LatexBox_latexmk_async=1
+
+" vimtex
+" let g:vimtex_latexmk_progname = 'nvr'
+" let g:vimtex_view_general_viewer
+"       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+" let g:vimtex_view_general_options = '-r @line @pdf @tex'
+" 
+" " This adds a callback hook that updates Skim after compilation
+" let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
+" function! UpdateSkim(status)
+"   if !a:status | return | endif
+" 
+"   let l:out = b:vimtex.out()
+"   let l:tex = expand('%:p')
+"   let l:cmd = [g:vimtex_view_general_viewer, '-r']
+"   if !empty(system('pgrep Skim'))
+"     call extend(l:cmd, ['-g'])
+"   endif
+"   if has('nvim')
+"     call jobstart(l:cmd + [line('.'), l:out, l:tex])
+"   elseif has('job')
+"     call job_start(l:cmd + [line('.'), l:out, l:tex])
+"   else
+"     call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
+"   endif
+" endfunction
+
+set mouse=a
+" set mouse=
 " map <ScrollWheelUp> <C-Y>
 " map <ScrollWheelDown> <C-E>
 

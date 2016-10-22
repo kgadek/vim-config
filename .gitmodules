@@ -55,3 +55,6 @@
 [submodule "_cabal/fast-tags"]
 	path = _cabal/fast-tags
 	url = git@github.com:elaforge/fast-tags.git
+[submodule "bundle/dracula-theme"]
+	path = bundle/dracula-theme
+	url = git@github.com:dracula/vim.git
